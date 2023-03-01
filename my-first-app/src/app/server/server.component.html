@@ -7,6 +7,13 @@
     <title>Document</title>
   </head>
   <body>
-    <p>{{ "Server" }} with ID {{ serverId }} is {{ getServerStatus() }}</p>
+    <p
+      [ngStyle]="{
+        backgroundColor: getColor()
+      }"
+      [ngClass]="{ online: serverStatus === 'online' }"
+    >
+      {{ "Server" }} with ID {{ serverId }} is {{ getServerStatus() }}
+    </p>
   </body>
 </html>
